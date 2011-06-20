@@ -1,0 +1,13 @@
+# Installation
+
+* Create rvmrc
+* Install bundler
+* Install Gems
+
+# Configuration
+
+Add your token to the app
+
+# Starting app
+
+rackup
