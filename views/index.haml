@@ -1,0 +1,10 @@
+-["unscheduled", "finished", "started", "delivered"].each do |status|
+  %div{:class => status}
+    %h2= status
+  -@projects.each do |project|
+    - project.stories.all(:current_state => status) do |story|
+      %p= "#{story.name}"
+      %pre= "#{story.story_type}"
+      %pre= "#{story.current_state}"
+      %pre= "#{project.name}"
+      
