@@ -1,29 +1,26 @@
-$started:    #f5f2d4
-$unstarted:  #f5f4f5
-$done:       #d8ead1
+$started:     #f5f2d4
+$unstarted:   #f5f4f5
+$delivered:   #d8ead1
 
 body
   font: 16px/18px Helvetica
   text-align: center
 
-.page
-  text-align: left
-  margin: 0 auto
-  width: 500px
-
 .hidden
   display: none
 
-article.print
-  ol
-    font: bold 42px "Helvetica Neue", Helvetica, "Arial Black", Arial, sans-serif
-    letter-spacing: -0.5px
-    line-height: 100%
-    list-style-type: none
-    margin: 50px 0 50px 0
-    li
-      &:after
-        content: '&'
-    li:last-child
-      &:after
-        content: '.'
+.panel
+  width: 25%
+  float: left
+
+.unstarted
+  background-color: $unstarted
+  
+.started
+  background-color: $started
+  
+.finished
+  background-color: $delivered
+  
+.delivered
+  background-color: $delivered

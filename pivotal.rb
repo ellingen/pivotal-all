@@ -21,4 +21,8 @@ get '/' do
   haml :index
 end
 
+get '/static' do
+  haml :static
+end
+
 
