@@ -2,7 +2,7 @@
 source :rubygems
 
 # the framework
-gem "sinatra"
+gem "sinatra", :require => false
 
 # the style
 gem "haml"
