@@ -1,0 +1,14 @@
+<% ["unscheduled", "finished", "started", "delivered"].each do |status| %>
+
+  <div class="<%= status %>">
+    <% @projects.each do |project| %>
+      <% project.stories.all(:current_state => status).each do |story| %>
+        <div class='story'>
+          <h2><%= story.name %></h2>
+          <h3><%= project.name %></h3>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+<% end %>
