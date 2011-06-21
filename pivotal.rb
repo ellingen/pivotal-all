@@ -1,8 +1,3 @@
-# require 'sass'
-# require 'haml'
-# require 'sinatra'
-# require 'pivotal-tracker'
-
 require "sinatra/config_file"
 
 # set utf-8 for outgoing
@@ -19,17 +14,13 @@ get "/css/:stylesheet.css" do
   sass :"css/#{params[:stylesheet]}"
 end
 
-
 get '/' do
   PivotalTracker::Client.token = settings.token
   PivotalTracker::Client.use_ssl = true
   @projects = PivotalTracker::Project.all
-
   haml :index
 end
 
 get '/static' do
   haml :static
 end
-
-
