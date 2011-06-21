@@ -6,4 +6,3 @@ Bundler.require
 require './pivotal.rb'
 
 run Sinatra::Application
-

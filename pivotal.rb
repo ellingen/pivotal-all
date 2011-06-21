@@ -1,8 +1,3 @@
-# require 'sass'
-# require 'haml'
-# require 'sinatra'
-# require 'pivotal-tracker'
-
 require "sinatra/config_file"
 
 # set utf-8 for outgoing
@@ -23,7 +18,6 @@ end
 
 get '/' do
   @projects = PivotalTracker::Project.all
-
   haml :index
 end
 
@@ -37,5 +31,3 @@ end
 get '/static' do
   haml :static
 end
-
-
