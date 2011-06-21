@@ -5,6 +5,7 @@ GEM
     haml (3.1.2)
     happymapper (0.3.2)
       libxml-ruby (~> 1.1.3)
+    json (1.5.3)
     libxml-ruby (1.1.4)
     mime-types (1.16)
     nokogiri (1.4.3.1)
@@ -25,14 +26,17 @@ GEM
     sinatra-config-file (0.6.1)
       sinatra (~> 1.0)
     tilt (1.3.2)
+    yajl-ruby (0.8.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   haml
+  json
   pivotal-tracker
   sass
   shotgun
   sinatra
   sinatra-config-file
+  yajl-ruby

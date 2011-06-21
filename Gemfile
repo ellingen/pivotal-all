@@ -16,3 +16,7 @@ gem "pivotal-tracker"
 
 # the deployment
 gem "shotgun"
+
+# faster JSON
+gem 'yajl-ruby'
+gem 'json'
