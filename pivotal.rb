@@ -8,6 +8,8 @@ require "sinatra/config_file"
 # set utf-8 for outgoing
 before do
   headers "Content-Type" => "text/html; charset=utf-8"
+  PivotalTracker::Client.token = settings.token
+  PivotalTracker::Client.use_ssl = true
 end
 
 configure do
@@ -19,13 +21,17 @@ get "/css/:stylesheet.css" do
   sass :"css/#{params[:stylesheet]}"
 end
 
-
 get '/' do
-  PivotalTracker::Client.token = settings.token
-  PivotalTracker::Client.use_ssl = true
   @projects = PivotalTracker::Project.all
 
   haml :index
+end
+
+get '/update/:status' do
+  @projects = PivotalTracker::Project.all
+  @status = params[:status]
+  
+  haml :update, :layout => false
 end
 
 get '/static' do

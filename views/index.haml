@@ -4,7 +4,7 @@
     %ul
     -@projects.each do |project|
       -project.stories.all(:current_state => status).each do |story|
-        %li
+        %li{:id => "#{story.id}"}
           %p.project= project.name
           %p.type= story.story_type
           %h3

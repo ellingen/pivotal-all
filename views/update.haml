@@ -1,0 +1,12 @@
+%h2= @status.capitalize
+%ul
+-@projects.each do |project|
+  -project.stories.all(:current_state => @status).each do |story|
+    %li
+      %p.project= project.name
+      %p.type= story.story_type
+      %h3
+        %a{:href => "#{story.url}"}= story.name
+      %p.owner= story.owned_by
+      %p.label= story.labels
+      %p.points= story.estimate
